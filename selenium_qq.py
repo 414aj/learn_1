@@ -8,6 +8,7 @@ browser.get("https://mail.qq.com")
 time.sleep(5)
 
 browser.switch_to.frame("login_frame")
+browser.find_element_by_xpath("/html/body/div/div/div/a[2]").click()
 uElem=browser.find_element_by_name('u')
 uElem.clear()
 uElem.send_keys('2675849542')
