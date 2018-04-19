@@ -17,7 +17,7 @@ pElem.send_keys('201314asdb')
 browser.find_element_by_id("login_button").click()
 time.sleep(5)
 
-qElem=browser.find_element_by_link_text('退出')
+browser.switch_to.default_content()
 browser.find_element_by_link_text('写信').click()
 time.sleep(5)
 browser.switch_to.frame('mainFrame')
