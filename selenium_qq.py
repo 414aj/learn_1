@@ -2,6 +2,7 @@
 
 import sys,time
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 browser=webdriver.Firefox()
 browser.get("https://mail.qq.com")
@@ -24,14 +25,13 @@ time.sleep(5)
 browser.switch_to.frame('mainFrame')
 aElem=browser.find_element_by_xpath("//*[@id='toAreaCtrl']/div[2]/input")
 aElem.send_keys('aj_is_me@qq.com')
-#bElem=browser.find_element_by_id('subject')
+
 frame=browser.find_element_by_xpath("//*[@id='QMEditorArea']/table/tbody/tr/td/iframe")
 browser.switch_to.frame(frame)
 cElem=browser.find_element_by_xpath('/html/body')
 cElem.send_keys("xxxxxxxxx")
-#time.sleep(2)
+
 browser.switch_to.parent_frame()
 browser.find_element_by_link_text('发送').click()
 time.sleep(5)
-qElem.click()
 browser.close()
